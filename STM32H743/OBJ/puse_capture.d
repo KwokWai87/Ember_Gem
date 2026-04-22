@@ -1,0 +1,11 @@
+..\obj\puse_capture.o: ..\HARDWARE\PUSE_CAPTURE.c
+..\obj\puse_capture.o: ..\HARDWARE\PUSE_CAPTURE.h
+..\obj\puse_capture.o: ..\SYSTEM\sys\sys.h
+..\obj\puse_capture.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\puse_capture.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\puse_capture.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\puse_capture.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\puse_capture.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\puse_capture.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\puse_capture.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\puse_capture.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

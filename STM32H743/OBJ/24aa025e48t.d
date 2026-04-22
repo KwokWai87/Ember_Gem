@@ -1,0 +1,13 @@
+..\obj\24aa025e48t.o: ..\HARDWARE\24AA025E48T.c
+..\obj\24aa025e48t.o: ..\HARDWARE\24AA025E48T.h
+..\obj\24aa025e48t.o: ..\SYSTEM\sys\sys.h
+..\obj\24aa025e48t.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\24aa025e48t.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\24aa025e48t.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\24aa025e48t.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\24aa025e48t.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\24aa025e48t.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\24aa025e48t.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\24aa025e48t.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\24aa025e48t.o: ..\HARDWARE\S_IIC.h
+..\obj\24aa025e48t.o: ..\SYSTEM\delay\delay.h

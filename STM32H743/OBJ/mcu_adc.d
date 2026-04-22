@@ -1,0 +1,16 @@
+..\obj\mcu_adc.o: ..\HARDWARE\MCU_ADC.c
+..\obj\mcu_adc.o: ..\HARDWARE\MCU_ADC.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\sys.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\mcu_adc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\mcu_adc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\mcu_adc.o: ..\SYSTEM\delay\delay.h
+..\obj\mcu_adc.o: ..\DSP_LIB\Include\arm_math.h
+..\obj\mcu_adc.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\mcu_adc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\mcu_adc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

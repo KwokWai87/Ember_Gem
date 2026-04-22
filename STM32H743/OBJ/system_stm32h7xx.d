@@ -1,0 +1,9 @@
+..\obj\system_stm32h7xx.o: ..\SYSTEM\sys\system_stm32h7xx.c
+..\obj\system_stm32h7xx.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\system_stm32h7xx.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\system_stm32h7xx.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\system_stm32h7xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\system_stm32h7xx.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\system_stm32h7xx.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\system_stm32h7xx.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\system_stm32h7xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

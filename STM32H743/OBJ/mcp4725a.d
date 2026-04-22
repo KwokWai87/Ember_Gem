@@ -1,0 +1,13 @@
+..\obj\mcp4725a.o: ..\HARDWARE\MCP4725A.c
+..\obj\mcp4725a.o: ..\HARDWARE\MCP4725A.h
+..\obj\mcp4725a.o: ..\SYSTEM\sys\sys.h
+..\obj\mcp4725a.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\mcp4725a.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\mcp4725a.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\mcp4725a.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\mcp4725a.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\mcp4725a.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\mcp4725a.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\mcp4725a.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\mcp4725a.o: ..\HARDWARE\S_IIC.h
+..\obj\mcp4725a.o: ..\SYSTEM\delay\delay.h

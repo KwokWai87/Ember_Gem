@@ -1,0 +1,12 @@
+..\obj\test.o: test.c
+..\obj\test.o: ..\SYSTEM\sys\sys.h
+..\obj\test.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\test.o: C:\Keil_v5\ARM\PACK\Keil\STM32H7xx_DFP\3.0.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h
+..\obj\test.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\test.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\test.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\test.o: C:\Keil_v5\ARM\PACK\Keil\STM32H7xx_DFP\3.0.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\system_stm32h7xx.h
+..\obj\test.o: ..\SYSTEM\usart\usart.h
+..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\test.o: ..\SYSTEM\delay\delay.h

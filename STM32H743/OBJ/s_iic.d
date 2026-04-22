@@ -1,0 +1,12 @@
+..\obj\s_iic.o: ..\HARDWARE\S_IIC.c
+..\obj\s_iic.o: ..\HARDWARE\S_IIC.h
+..\obj\s_iic.o: ..\SYSTEM\sys\sys.h
+..\obj\s_iic.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\s_iic.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\s_iic.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\s_iic.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\s_iic.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\s_iic.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\s_iic.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\s_iic.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\s_iic.o: ..\SYSTEM\delay\delay.h

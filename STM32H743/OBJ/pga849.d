@@ -1,0 +1,11 @@
+..\obj\pga849.o: ..\HARDWARE\PGA849.c
+..\obj\pga849.o: ..\HARDWARE\PGA849.h
+..\obj\pga849.o: ..\SYSTEM\sys\sys.h
+..\obj\pga849.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\pga849.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\pga849.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\pga849.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\pga849.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\pga849.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\pga849.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\pga849.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

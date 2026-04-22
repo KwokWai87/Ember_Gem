@@ -1,0 +1,14 @@
+..\obj\norflash.o: ..\HARDWARE\norflash.c
+..\obj\norflash.o: ..\HARDWARE\norflash.h
+..\obj\norflash.o: ..\SYSTEM\sys\sys.h
+..\obj\norflash.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\norflash.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\norflash.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\norflash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\norflash.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\norflash.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\norflash.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\norflash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\norflash.o: ..\HARDWARE\qspi.h
+..\obj\norflash.o: ..\SYSTEM\delay\delay.h
+..\obj\norflash.o: ..\SYSTEM\usart\usart.h

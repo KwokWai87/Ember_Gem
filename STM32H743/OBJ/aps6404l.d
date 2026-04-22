@@ -1,0 +1,13 @@
+..\obj\aps6404l.o: ..\HARDWARE\APS6404L.c
+..\obj\aps6404l.o: ..\HARDWARE\APS6404L.h
+..\obj\aps6404l.o: ..\SYSTEM\sys\sys.h
+..\obj\aps6404l.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\aps6404l.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\aps6404l.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\aps6404l.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\aps6404l.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\aps6404l.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\aps6404l.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\aps6404l.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\aps6404l.o: ..\HARDWARE\qspi.h
+..\obj\aps6404l.o: ..\SYSTEM\delay\delay.h

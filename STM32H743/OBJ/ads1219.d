@@ -1,0 +1,13 @@
+..\obj\ads1219.o: ..\HARDWARE\ADS1219.c
+..\obj\ads1219.o: ..\HARDWARE\ADS1219.h
+..\obj\ads1219.o: ..\SYSTEM\sys\sys.h
+..\obj\ads1219.o: ..\SYSTEM\sys\stm32h7xx.h
+..\obj\ads1219.o: ..\SYSTEM\sys\stm32h743xx.h
+..\obj\ads1219.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\ads1219.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ads1219.o: ..\SYSTEM\sys\cmsis_compiler.h
+..\obj\ads1219.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\ads1219.o: ..\SYSTEM\sys\system_stm32h7xx.h
+..\obj\ads1219.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\ads1219.o: ..\HARDWARE\S_IIC.h
+..\obj\ads1219.o: ..\SYSTEM\delay\delay.h
