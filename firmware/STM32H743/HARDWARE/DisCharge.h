@@ -3,6 +3,8 @@
 
 
 #include "sys.h"
+#include "usart.h"
+
 
 void DisCharge_Init(void);
 

@@ -36,10 +36,10 @@ void AAF_set_IO(u8 IO_SW3_A0,u8 IO_SW3_A1,u8 IO_SW3_A2,u8 IO_SW4_A0,u8 IO_SW4_A1
 	  IO_SW4_A1(IO_SW4_A1);
 	  IO_SW4_A2(IO_SW4_A2);	
 
-		printf("IO_SW3_A0:%d\r\n",IO_SW3_A0);
-		printf("IO_SW3_A1:%d\r\n",IO_SW3_A1);
-		printf("IO_SW3_A2:%d\r\n",IO_SW3_A2);
-		printf("IO_SW4_A0:%d\r\n",IO_SW4_A0);
-		printf("IO_SW4_A1:%d\r\n",IO_SW4_A1);
-		printf("IO_SW4_A2:%d\r\n",IO_SW4_A2);
+		sys_print("IO_SW3_A0:%d\r\n",IO_SW3_A0);
+		sys_print("IO_SW3_A1:%d\r\n",IO_SW3_A1);
+		sys_print("IO_SW3_A2:%d\r\n",IO_SW3_A2);
+		sys_print("IO_SW4_A0:%d\r\n",IO_SW4_A0);
+		sys_print("IO_SW4_A1:%d\r\n",IO_SW4_A1);
+		sys_print("IO_SW4_A2:%d\r\n",IO_SW4_A2);
 }

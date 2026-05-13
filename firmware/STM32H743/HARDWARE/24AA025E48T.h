@@ -4,6 +4,7 @@
 
 #include "sys.h"
 #include "S_IIC.h"
+#include "usart.h"
 
 #define U24AA025_ADDRESS     0xA0
 

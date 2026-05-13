@@ -4,9 +4,11 @@
 ..\obj\ch446q.o: ..\SYSTEM\sys\stm32h7xx.h
 ..\obj\ch446q.o: ..\SYSTEM\sys\stm32h743xx.h
 ..\obj\ch446q.o: ..\SYSTEM\sys\core_cm7.h
-..\obj\ch446q.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ch446q.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\ch446q.o: ..\SYSTEM\sys\cmsis_compiler.h
 ..\obj\ch446q.o: ..\SYSTEM\sys\cmsis_armcc.h
 ..\obj\ch446q.o: ..\SYSTEM\sys\system_stm32h7xx.h
-..\obj\ch446q.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\ch446q.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\ch446q.o: ..\SYSTEM\delay\delay.h
+..\obj\ch446q.o: ..\SYSTEM\usart\usart.h
+..\obj\ch446q.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

@@ -5,9 +5,10 @@
 ..\obj\usmart.o: ..\SYSTEM\sys\stm32h7xx.h
 ..\obj\usmart.o: ..\SYSTEM\sys\stm32h743xx.h
 ..\obj\usmart.o: ..\SYSTEM\sys\core_cm7.h
-..\obj\usmart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\usmart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\usmart.o: ..\SYSTEM\sys\cmsis_compiler.h
 ..\obj\usmart.o: ..\SYSTEM\sys\cmsis_armcc.h
 ..\obj\usmart.o: ..\SYSTEM\sys\system_stm32h7xx.h
-..\obj\usmart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\usmart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\usmart.o: ..\SYSTEM\usart\usart.h
+..\obj\usmart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

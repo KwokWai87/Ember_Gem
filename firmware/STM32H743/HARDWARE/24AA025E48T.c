@@ -6,7 +6,7 @@ void EEPROM_Init(void)
 	u8 temp[5];
 	MAC_ADDRESS_READ();
 	U24AA025_READ(0,temp,5);
-	printf("0x%0.2X 0x%0.2X 0x%0.2X 0x%0.2X 0x%0.2X\r\n",temp[0],temp[1],temp[2],temp[3],temp[4]);
+	sys_print("0x%0.2X 0x%0.2X 0x%0.2X 0x%0.2X 0x%0.2X\r\n",temp[0],temp[1],temp[2],temp[3],temp[4]);
 	if(temp[0]!=0x00)U24AA025_WRITE(0,EEPROM_BUFFER,5);
 }
 
@@ -50,5 +50,5 @@ void MAC_ADDRESS_READ(void)
 {
 	u8 pbuffer[6];
   U24AA025_READ(MAC_ADDRESS,pbuffer,6); 
-	printf("EEPROM_ID:%0.2X:%0.2X:%0.2X:%0.2X:%0.2X:%0.2X\r\n",pbuffer[0],pbuffer[1],pbuffer[2],pbuffer[3],pbuffer[4],pbuffer[5]);
+	sys_print("EEPROM_ID:%0.2X:%0.2X:%0.2X:%0.2X:%0.2X:%0.2X\r\n",pbuffer[0],pbuffer[1],pbuffer[2],pbuffer[3],pbuffer[4],pbuffer[5]);
 }

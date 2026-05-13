@@ -3,6 +3,7 @@
 
 #include "sys.h"
 #include "delay.h" 
+#include "usart.h"
 
 void POWER_IO_Init(void);
 void POWER_READ(void);

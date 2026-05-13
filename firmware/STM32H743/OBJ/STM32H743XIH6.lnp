@@ -23,6 +23,7 @@
 "..\obj\mcu_adc.o"
 "..\obj\aaf_io.o"
 "..\obj\discharge.o"
+"..\obj\func_api.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"

@@ -49,27 +49,27 @@ void ADC1_2_Init(u8 simpr,u16 OSVR, u8 OVSS,u8 JOVSE,u8 ROVSE,u32  length)
 		{
 		if(OSVR>1023)	
 		{ 
-			printf("OSVR err,should be 0~1023,set to 0\r\n");
+			sys_print("OSVR err,should be 0~1023,set to 0\r\n");
 			OSVR=0;
 		}
 		if(OVSS>11)	
 		{ 
-			printf("OVSS err,should be 0~11,set to 0\r\n");
+			sys_print("OVSS err,should be 0~11,set to 0\r\n");
 		}	
 		if(JOVSE>1)	
 		{ 
-			printf("JOVSE err,should be 0~1,set to 0\r\n");
+			sys_print("JOVSE err,should be 0~1,set to 0\r\n");
 		}
 		if(ROVSE>1)	
 		{ 
-			printf("ROVSE err,should be 0~1,set to 0\r\n");
+			sys_print("ROVSE err,should be 0~1,set to 0\r\n");
 		}		    		
     ADC1->CFGR2 =0;
 		ADC1->CFGR2 |=((u32)OSVR << 16)|((u32)OVSS << 5)| ((u32)JOVSE << 1)| ((u32)ROVSE << 0);
-		printf("OSVR:%d\r\n",OSVR);	
-    printf("OVSS:%d\r\n",OVSS);		
-		printf("JOVSE:%d\r\n",JOVSE);	
-    printf("ROVSE:%d\r\n",ROVSE);				
+		sys_print("OSVR:%d\r\n",OSVR);	
+    sys_print("OVSS:%d\r\n",OVSS);		
+		sys_print("JOVSE:%d\r\n",JOVSE);	
+    sys_print("ROVSE:%d\r\n",ROVSE);				
 		}
 
     /*10. 关键：DMA + 连续模式 */
@@ -80,31 +80,31 @@ void ADC1_2_Init(u8 simpr,u16 OSVR, u8 OVSS,u8 JOVSE,u8 ROVSE,u32  length)
   if(length>30720)
 	{
 	 length=30720;
-	 printf("ADC_buffer<=30KB\r\n");
+	 sys_print("ADC_buffer<=30KB\r\n");
 	}
 	
 	ADC_BUFFER_SIZE=length;
-	printf("ADC_BUFFER_SIZE:%d\r\n",length);
+	sys_print("ADC_BUFFER_SIZE:%d\r\n",length);
 	switch(simpr)
 	{
-		case 0:printf("1.5 ADC clock cycles(default)\r\n"); 
+		case 0:sys_print("1.5 ADC clock cycles(default)\r\n"); 
 		       break;
-		case 1:printf("2.5 ADC clock cycles\r\n"); 
+		case 1:sys_print("2.5 ADC clock cycles\r\n"); 
 		       break;	
-		case 2:printf("8.5 ADC clock cycles\r\n"); 
+		case 2:sys_print("8.5 ADC clock cycles\r\n"); 
 		       break;	
-		case 3:printf("16.5 ADC clock cycles\r\n"); 
+		case 3:sys_print("16.5 ADC clock cycles\r\n"); 
 		       break;	
-		case 4:printf("32.5 ADC clock cycles\r\n"); 
+		case 4:sys_print("32.5 ADC clock cycles\r\n"); 
 		       break;
-		case 5:printf("64.5 ADC clock cycles\r\n"); 
+		case 5:sys_print("64.5 ADC clock cycles\r\n"); 
 		       break;
-		case 6:printf("327.5 ADC clock cycles\r\n"); 
+		case 6:sys_print("327.5 ADC clock cycles\r\n"); 
 		       break;
-		case 7:printf("810.5 ADC clock cycles\r\n"); 
+		case 7:sys_print("810.5 ADC clock cycles\r\n"); 
 		       break;
 		default:simpr=0;
-			     printf("simpr err! should be 0~7,set to 0 now!\r\n");
+			     sys_print("simpr err! should be 0~7,set to 0 now!\r\n");
            break;	
 	}
     /* 15. 采样时间（CH1） */
@@ -194,7 +194,7 @@ u32 Get_Adc_Average(u8 ch, u8 times)
     return (temp_val / times); 
 }  
 
-void Read_Mcu_ADC(u8 ch)
+float Read_Mcu_ADC(u8 ch)
 {
     u32 temp_avg = 0;
     int32_t true_diff = 0;
@@ -207,9 +207,10 @@ void Read_Mcu_ADC(u8 ch)
 
     // 数学转换
     vol = (float)true_diff * (2.5f / 32768.0f);
-
-    printf("MCU_ADC_vol:%0.4f V\r\n", vol);
-    printf("MCU_ADC_raw:%u, true_diff:%d\r\n", temp_avg, true_diff); 
+    
+    sys_print("MCU_ADC_vol:%0.4f V\r\n", vol);
+    sys_print("MCU_ADC_raw:%u, true_diff:%d\r\n", temp_avg, true_diff); 
+	  return vol;
 }
 
 void ADC_BUFFER_READ(u8 model)
@@ -220,8 +221,8 @@ void ADC_BUFFER_READ(u8 model)
 	
 	if(model==2)
  {
- for(i=0;i<ADC_BUFFER_SIZE;i++)printf("%d,", ADC_BUFFER[i]);
- printf("\r\n" );
+ for(i=0;i<ADC_BUFFER_SIZE;i++)sys_print("%d,", ADC_BUFFER[i]);
+ sys_print("\r\n" );
  }
  else if(model==1)
 {
@@ -230,9 +231,9 @@ void ADC_BUFFER_READ(u8 model)
 		true_diff =(u16)ADC_BUFFER[i] - 32768;
     vol = (float)true_diff * (2.5f / 32768.0f);	
    // ADC_VOL[i]=vol;	 
-    printf("%0.4f,", vol);
+    sys_print("%0.4f,", vol);
  }
-	 printf("\r\n");
+	 sys_print("\r\n");
 
 }
 else
@@ -253,7 +254,7 @@ else
 		arm_min_f32(ADC_VOL,ADC_BUFFER_SIZE,&min_vol,&MIN_INDEX);
 		arm_rms_f32(ADC_VOL,ADC_BUFFER_SIZE,&Rms);
 		Vpp=max_vol-min_vol;
-		printf("Vpp:%0.4f,Rms:%0.4f\r\n",Vpp,Rms);
+		sys_print("Vpp:%0.4f,Rms:%0.4f\r\n",Vpp,Rms);
 }
 
 SCB_InvalidateDCache_by_Addr((uint32_t*)ADC_BUFFER, ADC_BUFFER_SIZE);

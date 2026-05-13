@@ -1,8 +1,8 @@
 #ifndef __AAF_IO_H_ 
 #define __AAF_IO_H_
 
-
 #include "sys.h"
+#include "usart.h"
 
 #define IO_SW3_A0(x)   GPIO_Pin_Set(GPIOB,PIN12,x)
 #define IO_SW3_A1(x)   GPIO_Pin_Set(GPIOB,PIN13,x)

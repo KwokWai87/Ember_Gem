@@ -4,8 +4,8 @@
 ..\obj\tlv3502aid.o: ..\SYSTEM\sys\stm32h7xx.h
 ..\obj\tlv3502aid.o: ..\SYSTEM\sys\stm32h743xx.h
 ..\obj\tlv3502aid.o: ..\SYSTEM\sys\core_cm7.h
-..\obj\tlv3502aid.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\tlv3502aid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\tlv3502aid.o: ..\SYSTEM\sys\cmsis_compiler.h
 ..\obj\tlv3502aid.o: ..\SYSTEM\sys\cmsis_armcc.h
 ..\obj\tlv3502aid.o: ..\SYSTEM\sys\system_stm32h7xx.h
-..\obj\tlv3502aid.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\tlv3502aid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

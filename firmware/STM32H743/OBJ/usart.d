@@ -3,9 +3,10 @@
 ..\obj\usart.o: ..\SYSTEM\sys\stm32h7xx.h
 ..\obj\usart.o: ..\SYSTEM\sys\stm32h743xx.h
 ..\obj\usart.o: ..\SYSTEM\sys\core_cm7.h
-..\obj\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\usart.o: ..\SYSTEM\sys\cmsis_compiler.h
 ..\obj\usart.o: ..\SYSTEM\sys\cmsis_armcc.h
 ..\obj\usart.o: ..\SYSTEM\sys\system_stm32h7xx.h
-..\obj\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\usart.o: ..\SYSTEM\usart\usart.h
+..\obj\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

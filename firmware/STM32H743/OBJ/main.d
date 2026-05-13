@@ -3,12 +3,13 @@
 ..\obj\main.o: ..\SYSTEM\sys\stm32h7xx.h
 ..\obj\main.o: ..\SYSTEM\sys\stm32h743xx.h
 ..\obj\main.o: ..\SYSTEM\sys\core_cm7.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\main.o: ..\SYSTEM\sys\cmsis_compiler.h
 ..\obj\main.o: ..\SYSTEM\sys\cmsis_armcc.h
 ..\obj\main.o: ..\SYSTEM\sys\system_stm32h7xx.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\main.o: ..\SYSTEM\delay\delay.h
 ..\obj\main.o: ..\HARDWARE\led.h
 ..\obj\main.o: ..\HARDWARE\spi.h
@@ -35,7 +36,7 @@
 ..\obj\main.o: ..\HARDWARE\MCU_ADC.h
 ..\obj\main.o: ..\DSP_LIB\Include\arm_math.h
 ..\obj\main.o: ..\SYSTEM\sys\core_cm7.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\main.o: ..\HARDWARE\AAF_IO.h
 ..\obj\main.o: ..\HARDWARE\DisCharge.h

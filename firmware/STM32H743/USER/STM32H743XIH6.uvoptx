@@ -148,40 +148,7 @@
           <Name>UL2CM3(-S0 -C0 -P0 ) -FN1 -FC8000 -FD20000000 -FF0STM32H7x_2048 -FL0200000 -FS08000000 -FP0($$Device:STM32H743XIHx$CMSIS\Flash\STM32H7x_2048.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>37</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134229294</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\HARDWARE\APS6404L.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\STM32H743XIH6\../HARDWARE/APS6404L.c\37</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>240</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134227436</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\HARDWARE\MCU_ADC.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\STM32H743XIH6\../HARDWARE/MCU_ADC.c\240</Expression>
-        </Bp>
-      </Breakpoint>
+      <Breakpoint/>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -242,6 +209,26 @@
           <count>11</count>
           <WinNumber>1</WinNumber>
           <ItemText>APS6404L_buffer1</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>H_PUSE1,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>13</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>H_PUSE2,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>14</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>((TIM_TypeDef *) (((0x40000000UL) + 0x00010000UL) + 0x0400UL)),0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>15</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>(TIM_TypeDef *)0x40000C00,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -621,6 +608,18 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>25</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\HARDWARE\FUNC_API.c</PathWithFileName>
+      <FilenameWithoutPath>FUNC_API.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
   </Group>
 
   <Group>
@@ -631,7 +630,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>25</FileNumber>
+      <FileNumber>26</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -643,7 +642,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>26</FileNumber>
+      <FileNumber>27</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -655,7 +654,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>27</FileNumber>
+      <FileNumber>28</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -675,7 +674,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>5</GroupNumber>
-      <FileNumber>28</FileNumber>
+      <FileNumber>29</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -687,7 +686,7 @@
     </File>
     <File>
       <GroupNumber>5</GroupNumber>
-      <FileNumber>29</FileNumber>
+      <FileNumber>30</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -699,7 +698,7 @@
     </File>
     <File>
       <GroupNumber>5</GroupNumber>
-      <FileNumber>30</FileNumber>
+      <FileNumber>31</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -719,7 +718,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>6</GroupNumber>
-      <FileNumber>31</FileNumber>
+      <FileNumber>32</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -739,7 +738,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>7</GroupNumber>
-      <FileNumber>32</FileNumber>
+      <FileNumber>33</FileNumber>
       <FileType>4</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>

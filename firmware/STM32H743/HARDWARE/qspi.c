@@ -13,7 +13,7 @@
 //       1,失败;
 u8 QSPI_Init(void)
 {
-	u32 tempreg=0;
+//	u32 tempreg=0;
 	RCC->AHB4ENR|=1<<1;    		//使能PORTB时钟	   
 	RCC->AHB4ENR|=1<<5;    		//使能PORTF时钟	   
 	RCC->AHB3ENR|=1<<14;   		//QSPI时钟使能

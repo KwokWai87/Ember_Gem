@@ -3,6 +3,7 @@
 
 #include "sys.h" 
 #include "delay.h" 
+#include "usart.h"
 
 #define IO_SWA_CS1(x)			GPIO_Pin_Set(GPIOD,PIN7,x)		
 #define IO_SWA_CS2(x)			GPIO_Pin_Set(GPIOC,PIN8,x)	

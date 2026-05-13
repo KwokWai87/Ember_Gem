@@ -4,6 +4,7 @@
 
 #include "sys.h"
 #include "S_IIC.h"
+#include "usart.h"
 
 #define IO_ADC_RST(x)  GPIO_Pin_Set(GPIOG,PIN0,x)	
 #define IO_ADC_DRDY    GPIO_Pin_Get(GPIOG,PIN1)	
@@ -53,7 +54,7 @@
 
 
 void ADS1219_init(u8 mux,u8 gain,u8 dr,u8 cm,u8 vref);
-void ADS1219_Read_vol(void);
+float ADS1219_Read_vol(void);
 
 
 

@@ -27,8 +27,7 @@
 
 
 const u8 TEXT_Buffer[]={"Polaris STM32H7 QSPI TEST"};
-#define SIZE sizeof(TEXT_Buffer)
-u8 debug=0;	
+#define SIZE sizeof(TEXT_Buffer)	
 extern u32 ADC_BUFFER_SIZE;
 int main(void)
 { 
@@ -57,31 +56,33 @@ int main(void)
 	AAF_IO_Init();
 	PGA849_init();
 	ADS1219_init(0,0,0,0,0);
-	APS6404L_Init();
+//	APS6404L_Init();
 	MCP4725A_init(1);
 	MCP4725A_init(2);
 	DisCharge_Init();
-//	TIM5_CH1_3_Cap_Init(0xFFFFFFFF,10-1);//100ns
+	TIM5_CH1_3_Cap_Init(0xFFFFFFFF,10-1);//100ns
 //	 MCP4725A_Set_Voltage(1, SAVE,OUT_ON,2.5f);
 //	 MCP4725A_Set_Voltage(2, SAVE,OUT_ON,2.5f);
-	
 //  NORFLASH_Init();
-	while(1)
-	{
-		LEDR(0);
-		LEDG(0);
-		LEDB(0);
-		delay_ms(500);
 		LEDR(1);
 		LEDG(1);
 		LEDB(1);
-//		NORFLASH_Read(datatemp,flashsize-100,SIZE);					//从倒数第100个地址处开始,读出SIZE个字节
-		delay_ms(500);	
-    if(debug)
-		{
-		debug=0;
-//		NORFLASH_Erase_Chip();
-//		NORFLASH_Write((u8*)TEXT_Buffer,flashsize-100,SIZE);		//从倒数第100个地址处开始,写入SIZE长度的数据	
-		}			
+	while(1)
+	{
+//		LEDR(0);
+//		LEDG(0);
+//		LEDB(0);
+//		delay_ms(500);
+//		LEDR(1);
+//		LEDG(1);
+//		LEDB(1);
+////		NORFLASH_Read(datatemp,flashsize-100,SIZE);					//从倒数第100个地址处开始,读出SIZE个字节
+//		delay_ms(500);	
+//    if(debug)
+//		{
+//		debug=0;
+////		NORFLASH_Erase_Chip();
+////		NORFLASH_Write((u8*)TEXT_Buffer,flashsize-100,SIZE);		//从倒数第100个地址处开始,写入SIZE长度的数据	
+//		}			
 	}
 }

@@ -205,7 +205,7 @@ u8 Sys_Clock_Set(u32 plln,u32 pllm,u32 pllp,u32 pllq)
 	u8 status=0;
 	
 	PWR->CR3&=~(1<<2);				//SCUEN=0,锁定LDOEN和BYPASS位的设置
-	PWR->D3CR|=3<<14;				//VOS=3,Scale1,1.15~1.26V内核电压,FLASH访问可以得到最高性能
+	PWR->D3CR|=1<<14;				//VOS=3,Scale1,1.15~1.26V内核电压,FLASH访问可以得到最高性能
 	while((PWR->D3CR&(1<<13))==0);	//等待电压稳定 
 	RCC->CR|=1<<16;					//HSEON=1,开启HSE
 	while(((RCC->CR&(1<<17))==0)&&(retry<0X7FFF))retry++;//等待HSE RDY
@@ -282,7 +282,7 @@ void Stm32_Clock_Init(u32 plln,u32 pllm,u32 pllp,u32 pllq)
 	//操作地址的方式,来修改,该寄存器在<<STM32H750参考手册>>第113页,AXI_TARGx_FN_MOD
 	*((vu32*)0x51008108)=0x00000001;//设置AXI SRAM的矩阵读取能力为1 
 	Sys_Clock_Set(plln,pllm,pllp,pllq);//设置时钟  
-	QSPI_Enable_Memmapmode();		//使能QSPI内存映射模式
+//	QSPI_Enable_Memmapmode();		//使能QSPI内存映射模式
 	Cache_Enable();					//使能L1 Cache
 	//配置向量表				  
 #ifdef  VECT_TAB_RAM

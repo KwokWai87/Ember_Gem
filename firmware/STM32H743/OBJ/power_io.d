@@ -4,9 +4,11 @@
 ..\obj\power_io.o: ..\SYSTEM\sys\stm32h7xx.h
 ..\obj\power_io.o: ..\SYSTEM\sys\stm32h743xx.h
 ..\obj\power_io.o: ..\SYSTEM\sys\core_cm7.h
-..\obj\power_io.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\power_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\power_io.o: ..\SYSTEM\sys\cmsis_compiler.h
 ..\obj\power_io.o: ..\SYSTEM\sys\cmsis_armcc.h
 ..\obj\power_io.o: ..\SYSTEM\sys\system_stm32h7xx.h
-..\obj\power_io.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\power_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\power_io.o: ..\SYSTEM\delay\delay.h
+..\obj\power_io.o: ..\SYSTEM\usart\usart.h
+..\obj\power_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

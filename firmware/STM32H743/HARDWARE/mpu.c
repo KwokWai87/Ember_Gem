@@ -111,9 +111,9 @@ void MPU_Memory_Protection(void)
 void MemManage_Handler(void)
 { 
 	LEDR(0);							//点亮DS0
-	printf("Mem Access Error!!\r\n"); 	//输出错误信息
+	sys_print("Mem Access Error!!\r\n"); 	//输出错误信息
 	delay_ms(1000);	
-	printf("Soft Reseting...\r\n");		//提示软件重启
+	sys_print("Soft Reseting...\r\n");		//提示软件重启
 	delay_ms(1000);	
 	Sys_Soft_Reset();					//软复位
 }

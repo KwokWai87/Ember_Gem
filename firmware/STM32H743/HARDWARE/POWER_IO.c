@@ -27,16 +27,16 @@ void POWER_SET(u8 pow_en,u8 pow_en1,u8 pow_en2,u8 pwren_link)
 	IO_PWR_EN1(pow_en1);
 	IO_PWR_EN2(pow_en2);
 	IO_PWREN_EINK(pwren_link);
-	printf("pow_en:%d\r\n",pow_en);
-	printf("pow_en1:%d\r\n",pow_en1);
-	printf("pow_en2:%d\r\n",pow_en2);
-	printf("pwren_link:%d\r\n",pwren_link);
+	sys_print("pow_en:%d\r\n",pow_en);
+	sys_print("pow_en1:%d\r\n",pow_en1);
+	sys_print("pow_en2:%d\r\n",pow_en2);
+	sys_print("pwren_link:%d\r\n",pwren_link);
 }
 
 
 void POWER_READ(void)
 {
- 	printf("IO_CHG_DETECT:%d\r\n",IO_CHG_DETECT);
-  printf("IO_PG_DETECT:%d\r\n",IO_PG_DETECT);
-	printf("IO_PWR_DETECT:%d\r\n",IO_PWR_DETECT);
+ 	sys_print("IO_CHG_DETECT:%d\r\n",IO_CHG_DETECT);
+  sys_print("IO_PG_DETECT:%d\r\n",IO_PG_DETECT);
+	sys_print("IO_PWR_DETECT:%d\r\n",IO_PWR_DETECT);
 }

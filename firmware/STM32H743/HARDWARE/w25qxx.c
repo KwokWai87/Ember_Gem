@@ -226,7 +226,7 @@ void W25QXX_Write(u8* pBuffer,u32 WriteAddr,u16 NumByteToWrite)
  	secpos=WriteAddr/4096;//扇区地址  
 	secoff=WriteAddr%4096;//在扇区内的偏移
 	secremain=4096-secoff;//扇区剩余空间大小   
- 	//printf("ad:%X,nb:%X\r\n",WriteAddr,NumByteToWrite);//测试用
+ 	//sys_print("ad:%X,nb:%X\r\n",WriteAddr,NumByteToWrite);//测试用
  	if(NumByteToWrite<=secremain)secremain=NumByteToWrite;//不大于4096个字节
 	while(1) 
 	{	
@@ -276,7 +276,7 @@ void W25QXX_Erase_Chip(void)
 void W25QXX_Erase_Sector(u32 Dst_Addr)   
 {  
 	//监视falsh擦除情况,测试用   
- 	//printf("fe:%x\r\n",Dst_Addr);	  
+ 	//sys_print("fe:%x\r\n",Dst_Addr);	  
  	Dst_Addr*=4096;
     W25QXX_Write_Enable();                  //SET WEL 	 
     W25QXX_Wait_Busy();   

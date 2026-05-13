@@ -2,7 +2,7 @@
 #define __DG4052EEQ_H_
 
 #include "sys.h"
-
+#include "usart.h"
 
 #define  IO_SW5_A(x)       GPIO_Pin_Set(GPIOJ,PIN2,x)	
 #define  IO_SW5_B(x)       GPIO_Pin_Set(GPIOJ,PIN3,x)	

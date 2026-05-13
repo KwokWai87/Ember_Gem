@@ -16,6 +16,6 @@ void DisCharge_SET(u8 J1_en,u8 J2_en)
 	if(J2_en>1) J2_en=1;
 	DisChargeJ1_en(J1_en);
 	DisChargeJ2_en(J2_en);
-	printf("DisChargeJ1_en:%d\r\n",J1_en);
-	printf("DisChargeJ2_en:%d\r\n",J2_en);
+	sys_print("DisChargeJ1_en:%d\r\n",J1_en);
+	sys_print("DisChargeJ2_en:%d\r\n",J2_en);
 }

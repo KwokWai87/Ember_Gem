@@ -22,43 +22,39 @@ void PGA849_init(void)
 	
 }
 
-//vref0or1_25=0:1.25v
-//vref0or1_25=1:0.0v
-void PGA849_set(u8 vref0or1_25,u8 gain,u8 ADG1409_A0,u8 ADG1409_A1)
+//vref0or1_25=1:1.25v
+//vref0or1_25=0:0.0v
+void PGA849_set(u8 vref0or1_25,u8 gain,u8 ADG1409_A0_A1)
 {
 	
-if(ADG1409_A0)
-{
-	IO_SW7_A0(1);
-	printf("IO_SW7_A0:1,\r\n");
-}
-else
-{
-	IO_SW7_A0(0);
-	printf("IO_SW7_A0:0,\r\n");
-}
-
-if(ADG1409_A1)
-{
-	IO_SW7_A1(1);
-	printf("IO_SW7_A1:1,\r\n");
-}
-else
-{
-	IO_SW7_A1(0);
-	printf("IO_SW7_A1:0,\r\n");
-}
+	switch(ADG1409_A0_A1)
+	{
+		case 0:IO_SW7_A0(0);
+		       IO_SW7_A1(0);
+			     break;
+		case 1:IO_SW7_A0(1);
+		       IO_SW7_A1(0);
+			     break;		
+		case 2:IO_SW7_A0(0);
+		       IO_SW7_A1(1);
+			     break;	
+		case 3:IO_SW7_A0(1);
+		       IO_SW7_A1(1);
+			     break;	
+	}
+sys_print("IO_SW7_A0:%d\r\n",(ADG1409_A0_A1&0x01));
+sys_print("IO_SW7_A1:%d\r\n",((ADG1409_A0_A1&0x02)>>1));
 
 
 if(vref0or1_25)
 {
 	IO_SW6_IN(1);
-	printf("IO_SW6_IN:1,vref=0.0v\r\n");
+	sys_print("IO_SW6_IN:1,vref=1.25v\r\n");
 }
 else
 {
 	IO_SW6_IN(0);
-	printf("IO_SW6_IN:0,vref=1.25v\r\n");
+	sys_print("IO_SW6_IN:0,vref=0.0v\r\n");
 }
 	
 	switch(gain)
@@ -96,7 +92,7 @@ else
          IO_PGA_SET_A2(1);
 		     break;
 }
-printf("IO_PGA_SET_A0:%d\r\n",(gain&0x01));
-printf("IO_PGA_SET_A1:%d\r\n",((gain&0x02)>>1));
-printf("IO_PGA_SET_A2:%d\r\n",((gain&0x04)>>2));
+sys_print("IO_PGA_SET_A0:%d\r\n",(gain&0x01));
+sys_print("IO_PGA_SET_A1:%d\r\n",((gain&0x02)>>1));
+sys_print("IO_PGA_SET_A2:%d\r\n",((gain&0x04)>>2));
 }

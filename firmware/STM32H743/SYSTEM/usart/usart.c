@@ -1,5 +1,7 @@
 #include "sys.h"
-#include "usart.h"	  
+#include "usart.h"	
+
+u8 print_en=1;
 ////////////////////////////////////////////////////////////////////////////////// 	 
 //如果使用ucos,则包括下面的头文件即可.
 #if SYSTEM_SUPPORT_OS
@@ -117,7 +119,16 @@ void uart_init(u32 pclk2,u32 bound)
 	USART1->CR1|=1<<0;  	//串口使能
 }
 
-
+void sys_print(const char *format, ...)
+{
+	  if(print_en)
+		{
+    va_list args;
+    va_start(args, format);
+    vprintf(format, args);
+    va_end(args);
+		}
+}
 
 
 

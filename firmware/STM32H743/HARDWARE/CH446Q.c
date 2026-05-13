@@ -121,11 +121,11 @@ void CH446Q_MIX_CONTROL(u8 cs,u8 ax,u8 ay,u8 on_off)
 	        IO_SWA_AX4(1);
 		      break;					
  } 
- printf("ax:%d\r\n",ax);
- printf("IO_SWA_AX1:%d\r\n",ax&0x01);
- printf("IO_SWA_AX2:%d\r\n",((ax&0x02)>>1));
- printf("IO_SWA_AX3:%d\r\n",((ax&0x04)>>2));
- printf("IO_SWA_AX4:%d\r\n",((ax&0x08)>>3));
+ sys_print("ax:%d\r\n",ax);
+ sys_print("IO_SWA_AX1:%d\r\n",ax&0x01);
+ sys_print("IO_SWA_AX2:%d\r\n",((ax&0x02)>>1));
+ sys_print("IO_SWA_AX3:%d\r\n",((ax&0x04)>>2));
+ sys_print("IO_SWA_AX4:%d\r\n",((ax&0x08)>>3));
   switch(ay)
  {
    case 0:IO_SWA_AY1(0);
@@ -147,13 +147,25 @@ void CH446Q_MIX_CONTROL(u8 cs,u8 ax,u8 ay,u8 on_off)
    case 4:IO_SWA_AY1(0);
 	        IO_SWA_AY2(0);
 	        IO_SWA_AY3(1);
-		      break;	 	 
+		      break;	
+   case 5:IO_SWA_AY1(1);
+	        IO_SWA_AY2(0);
+	        IO_SWA_AY3(1);
+		      break;
+   case 6:IO_SWA_AY1(0);
+	        IO_SWA_AY2(1);
+	        IO_SWA_AY3(1);
+		      break;	
+   case 7:IO_SWA_AY1(1);
+	        IO_SWA_AY2(1);
+	        IO_SWA_AY3(1);
+		      break;					
  }
  
- printf("ay:%d\r\n",ay);
- printf("IO_SWA_AY1:%d\r\n",ay&0x01);
- printf("IO_SWA_AY2:%d\r\n",((ay&0x02)>>1));
- printf("IO_SWA_AY3:%d\r\n",((ay&0x04)>>2));
+ sys_print("ay:%d\r\n",ay);
+ sys_print("IO_SWA_AY1:%d\r\n",ay&0x01);
+ sys_print("IO_SWA_AY2:%d\r\n",((ay&0x02)>>1));
+ sys_print("IO_SWA_AY3:%d\r\n",((ay&0x04)>>2));
 
  switch(cs)
  {
@@ -178,58 +190,58 @@ void CH446Q_MIX_CONTROL(u8 cs,u8 ax,u8 ay,u8 on_off)
 	        IO_SWA_CS4(1);
 		      break;	 
  }
- printf("cs:%d\r\n",cs+1);
+ sys_print("cs:%d\r\n",cs+1);
  cs=1<<cs;
- printf("IO_SWA_CS1:%d\r\n",cs&0x01);
- printf("IO_SWA_CS2:%d\r\n",((cs&0x02)>>1));
- printf("IO_SWA_CS3:%d\r\n",((cs&0x04)>>2));
- printf("IO_SWA_CS4:%d\r\n",((cs&0x08)>>3));
+ sys_print("IO_SWA_CS1:%d\r\n",cs&0x01);
+ sys_print("IO_SWA_CS2:%d\r\n",((cs&0x02)>>1));
+ sys_print("IO_SWA_CS3:%d\r\n",((cs&0x04)>>2));
+ sys_print("IO_SWA_CS4:%d\r\n",((cs&0x08)>>3));
  delay_ms(1);
  if(on_off) IO_SWA_DAT(1);
  else IO_SWA_DAT(0); 
- printf("IO_SWA_DAT:%d\r\n",on_off);
+ sys_print("IO_SWA_DAT:%d\r\n",on_off);
  IO_SWA_STB(1);
- printf("IO_SWA_STB:1\r\n");
+ sys_print("IO_SWA_STB:1\r\n");
  IO_SWA_STB(0);
- printf("IO_SWA_STB:0\r\n");
+ sys_print("IO_SWA_STB:0\r\n");
 }
 
 void CH446Q_Reset(void)
 {
 	IO_SWA_RST(1);
-	printf("IO_SWA_RST:1\r\n");
+	sys_print("IO_SWA_RST:1\r\n");
 	IO_SWA_CS1(0);
 	IO_SWA_CS2(0);
 	IO_SWA_CS3(0);
 	IO_SWA_CS4(0);
-	printf("IO_SWA_CS1:0\r\n");
-	printf("IO_SWA_CS2:0\r\n");
-	printf("IO_SWA_CS3:0\r\n");
-	printf("IO_SWA_CS4:0\r\n");	
+	sys_print("IO_SWA_CS1:0\r\n");
+	sys_print("IO_SWA_CS2:0\r\n");
+	sys_print("IO_SWA_CS3:0\r\n");
+	sys_print("IO_SWA_CS4:0\r\n");	
 	
 	IO_SWA_AX1(0);
 	IO_SWA_AX2(0);
 	IO_SWA_AX3(0);
 	IO_SWA_AX4(0);
 
-	printf("IO_SWA_AX1:0\r\n");
-	printf("IO_SWA_AX2:0\r\n");
-	printf("IO_SWA_AX3:0\r\n");
-	printf("IO_SWA_AX4:0\r\n");	
+	sys_print("IO_SWA_AX1:0\r\n");
+	sys_print("IO_SWA_AX2:0\r\n");
+	sys_print("IO_SWA_AX3:0\r\n");
+	sys_print("IO_SWA_AX4:0\r\n");	
 	
   IO_SWA_AY1(0);
 	IO_SWA_AY2(0);
 	IO_SWA_AY3(0);
 
-	printf("IO_SWA_AY1:0\r\n");
-	printf("IO_SWA_AY2:0\r\n");
-	printf("IO_SWA_AY3:0\r\n");
+	sys_print("IO_SWA_AY1:0\r\n");
+	sys_print("IO_SWA_AY2:0\r\n");
+	sys_print("IO_SWA_AY3:0\r\n");
 
   IO_SWA_STB(0);
-  printf("IO_SWA_STB:0\r\n");
+  sys_print("IO_SWA_STB:0\r\n");
 	
 	IO_SWA_RST(0);
-  printf("IO_SWA_RST:0\r\n");
+  sys_print("IO_SWA_RST:0\r\n");
 	
 
 }

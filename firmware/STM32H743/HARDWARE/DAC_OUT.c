@@ -51,6 +51,6 @@ void Dac1_Set_Vol(u8 L_R,u32 vol)
 		DAC1->DHR12RD&=0x0000FFFF;
 		DAC1->DHR12RD|=temp<<16;
 	}
-	printf("L_R:%d vol:%d\r\n",L_R,vol);
+	sys_print("L_R:%d vol:%d\r\n",L_R,vol);
 	
 }

@@ -1,7 +1,7 @@
 #ifndef __SYS_H
 #define __SYS_H	 
 #include "stm32h7xx.h" 
-#include "stdio.h"
+#include "stdio.h"	
 //0,不支持OS
 //1,支持OS
 #define SYSTEM_SUPPORT_OS		0		//定义系统文件夹是否支持OS

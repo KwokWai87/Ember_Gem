@@ -23,25 +23,25 @@ void DG4052EEQ_Set(u8 set_res)
 	 case 0:  
 		      IO_SW5_A(0);
 	        IO_SW5_B(0);
-	        printf("750K次 select\r\n");
+	        sys_print("750K次 select\r\n");
 		      break;
  	 case 1:  
 		      IO_SW5_A(1);
 	        IO_SW5_B(0);
-	        printf("24K次 select\r\n");
+	        sys_print("24K次 select\r\n");
 		      break;
  	 case 2:  
 		      IO_SW5_A(0);
 	        IO_SW5_B(1);
-	        printf("2.49K次 select\r\n");
+	        sys_print("2.49K次 select\r\n");
 		      break;
  	 case 3:  
 		      IO_SW5_A(1);
 	        IO_SW5_B(1);
-	        printf("243次 select\r\n");
+	        sys_print("243次 select\r\n");
 		      break;
  }
- printf("IO_SW5_A:%d\r\n",set_res&0x01);
- printf("IO_SW5_B:%d\r\n",(set_res&0x02)>>1);
+ sys_print("IO_SW5_A:%d\r\n",set_res&0x01);
+ sys_print("IO_SW5_B:%d\r\n",(set_res&0x02)>>1);
 
 }
