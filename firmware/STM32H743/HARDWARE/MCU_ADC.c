@@ -1,5 +1,5 @@
 #include "MCU_ADC.h"
-q15_t ADC_BUFFER[30*1024]__attribute__ ((section("in_sram1_to_3")));
+uint16_t ADC_BUFFER[30*1024]__attribute__ ((section("in_sram1_to_3")));
 q15_t ADC_BUFFER1[30*1024]__attribute__ ((section("in_sram1_to_3")));
 q15_t ADC_BUFFER2[30*1024]SDRAM_AREA_ATTRIBUTE;
 float  ADC_VOL[90*1024]SDRAM_AREA_ATTRIBUTE;
@@ -213,51 +213,54 @@ float Read_Mcu_ADC(u8 ch)
 	  return vol;
 }
 
-void ADC_BUFFER_READ(u8 model)
+void ADC_BUFFER_READ(u8 model,int32_t Adc_Zero_Offset)
 {
 	u32 i=0,MAX_INDEX=0,MIN_INDEX=0;
 	int32_t true_diff = 0;
 	float vol = 0.0f,max_vol,min_vol,Vpp,Rms;
 	
-	if(model==2)
- {
- for(i=0;i<ADC_BUFFER_SIZE;i++)sys_print("%d,", ADC_BUFFER[i]);
- sys_print("\r\n" );
- }
- else if(model==1)
-{
-	for(i=0;i<ADC_BUFFER_SIZE;i++)
- {
-		true_diff =(u16)ADC_BUFFER[i] - 32768;
-    vol = (float)true_diff * (2.5f / 32768.0f);	
-   // ADC_VOL[i]=vol;	 
-    sys_print("%0.4f,", vol);
- }
-	 sys_print("\r\n");
-
-}
-else
-{  
+//		// 获取实际的硬件零点偏移 (需在初始化短路时测得，或暂时设为 32768)
+//		int32_t Adc_Zero_Offset = 32768; // 后期可替换为短路实测值
+		if(model == 1)
+		{
+		for(i = 0; i < ADC_BUFFER_SIZE; i++)
+		{
+		// 安全的偏移二进制解码逻辑
+		true_diff = (int32_t)ADC_BUFFER[i] - Adc_Zero_Offset;
+		vol = (float)true_diff * (2.5f / 32768.0f);
+		sys_print("%0.4f,", vol);
+		}
+		sys_print("\r\n");
+		}
+		else if (model != 2)
+		{
 		DMA1_Stream1->CR &= ~1;
 		while (DMA1_Stream1->CR & 1){};
-		DMA1_Stream1->NDTR =ADC_BUFFER_SIZE;
-		DMA1_Stream1->CR |= 1; // 使能 DMA
-		/* 14. 启动转换 */
-		ADC1->ISR |= (1UL << 2);        // 清空 EOC 标志位
+		DMA1_Stream1->NDTR = ADC_BUFFER_SIZE;
+		DMA1_Stream1->CR |= 1;
+		ADC1->ISR |= (1UL << 2);
 		ADC1->CR |= (1UL << 2);       	// 启动转换 (ADSTART)		
 		while (!(DMA1->LISR & DMA_LISR_TCIF1)){};
 		DMA1->LIFCR = DMA_LIFCR_CTCIF1;	
-		arm_add_q15(ADC_BUFFER,ADC_BUFFER1,ADC_BUFFER2,ADC_BUFFER_SIZE);
-		arm_q15_to_float(ADC_BUFFER2,&ADC_VOL[61440],ADC_BUFFER_SIZE);
-		arm_mult_f32(&ADC_VOL[30720],&ADC_VOL[61440],ADC_VOL,ADC_BUFFER_SIZE);	
-		arm_max_f32(ADC_VOL,ADC_BUFFER_SIZE,&max_vol,&MAX_INDEX);
-		arm_min_f32(ADC_VOL,ADC_BUFFER_SIZE,&min_vol,&MIN_INDEX);
-		arm_rms_f32(ADC_VOL,ADC_BUFFER_SIZE,&Rms);
-		Vpp=max_vol-min_vol;
-		sys_print("Vpp:%0.4f,Rms:%0.4f\r\n",Vpp,Rms);
+		// 1. 完美无损转换：将偏移二进制直接转为有符号补码
+		for(i = 0; i < ADC_BUFFER_SIZE; i++)
+		{
+		// 异或 0x8000 瞬间完成零点平移，完美规避 DSP 饱和问题
+		ADC_BUFFER2[i] = (q15_t)((uint16_t)ADC_BUFFER[i] ^ 0x8000);
+		}
+		// 2. 将有符号 Q15 转换为 Float 比例 [-1.0, 1.0)
+		arm_q15_to_float(ADC_BUFFER2, &ADC_VOL[61440], ADC_BUFFER_SIZE);
+		// 3. 原来的 arm_mult_f32 略显冗余，直接用 arm_scale_f32 乘以量程 2.5V 更高效
+		arm_scale_f32(&ADC_VOL[61440], 2.5f, ADC_VOL, ADC_BUFFER_SIZE);
+		// 4. 统计极值与 RMS (保持不变)
+		arm_max_f32(ADC_VOL, ADC_BUFFER_SIZE, &max_vol, &MAX_INDEX);
+		arm_min_f32(ADC_VOL, ADC_BUFFER_SIZE, &min_vol, &MIN_INDEX);
+		arm_rms_f32(ADC_VOL, ADC_BUFFER_SIZE, &Rms);
+		Vpp = max_vol - min_vol;
+		sys_print("Vpp:%0.4f,Rms:%0.4f\r\n", Vpp, Rms);
 }
 
-SCB_InvalidateDCache_by_Addr((uint32_t*)ADC_BUFFER, ADC_BUFFER_SIZE);
+SCB_InvalidateDCache_by_Addr((uint32_t*)ADC_BUFFER, ADC_BUFFER_SIZE *sizeof(uint16_t));
 //SCB_InvalidateDCache_by_Addr((uint32_t*)ADC_VOL, ADC_BUFFER_SIZE);
 
 }

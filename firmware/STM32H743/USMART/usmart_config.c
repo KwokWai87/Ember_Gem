@@ -34,7 +34,7 @@ struct _m_usmart_nametab usmart_nametab[]=
 	(void*)CH446Q_Reset,(u8 *)"void CH446Q_Reset(void)",
 	(void*)Dac1_Set_Vol,(u8 *)"void Dac1_Set_Vol(u8 L_R,u32 vol)",
 	(void*)ADC1_2_Init,(u8 *)"void ADC1_2_Init(u8 simpr,u16 OSVR, u8 OVSS,u8 JOVSE,u8 ROVSE,u32  length)",
-	(void*)ADC_BUFFER_READ,(u8 *)"void ADC_BUFFER_READ(u8 model)",
+	(void*)ADC_BUFFER_READ,(u8 *)"void ADC_BUFFER_READ(u8 model,int32_t Adc_Zero_Offset)",
 	(void*)ADS1219_init,(u8 *)"void ADS1219_init(u8 mux,u8 gain,u8 dr,u8 cm,u8 vref)",
 	(void*)ADS1219_Read_vol,(u8 *)"float ADS1219_Read_vol(void)",	
 	(void*)DG4052EEQ_Set,(u8 *)"void DG4052EEQ_Set(u8 set_res)",
